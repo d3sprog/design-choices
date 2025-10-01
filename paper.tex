@@ -256,7 +256,7 @@ for example when editing code in a code editor embedded within the document.
 
 \item \textbf{Customization.} In document-oriented programming systems, it is typically possible
 to modify the document at any point during the use of the system. In terms of technical
-dimensions, the \emph{staging of customization} is such that that the modification of the
+dimensions, the \emph{staging of customization} is such that the modification of the
 document or code embedded in it does not require a special \emph{mode of interaction}. The
 customization is also done using the original notations of the system. However, it is rarely
 possible to modify the system itself from within the document and this typically requires a
@@ -485,7 +485,7 @@ would lead to the correct result.
 
 Subtext~8~\cite{edwards-2018-directprog} introduced a different underlying representation of the
 document. Rather than storing the document itself, the primary representation of the document
-becomes a history of edit actions through which the document is performed. The representation erases
+becomes a history of edit actions through which the document is modified. The representation erases
 the distinction between program execution and user interaction. Whatever can be done by running
 a program can also be done by the user through direct manipulation. A sequence of past actions
 can also be lifted into a reusable entity, providing a mechanism for programming by demonstration.
@@ -614,7 +614,7 @@ Webstrates.
 
 \subsection{Modularity}
 The choice of modularity mechanism determines how can aspects of programs be reused. The design
-choice corresponds directly to the technical dimension \emph{factoring of complextiy}.
+choice corresponds directly to the technical dimension \emph{factoring of complexity}.
 In programming languages, this is often the key concern and possible solutions range from
 classes and inheritance to domain-specific languages and type classes. In document-oriented
 programming systems, most programs are more direct and only implement more basic modularity
@@ -647,7 +647,7 @@ mechanisms (possibly posing an interesting open question for the future of the p
   or interactive components (\cite{conlen-2018-idyll}).
 
 \item \emph{Edit History Reference.} In systems where the underlying representation of a document
-  is a history of edits (see \S\ref{sec:struct-repr}), it is also possible to spcify behavior
+  is a history of edits (see \S\ref{sec:struct-repr}), it is also possible to specify behavior
   by referring to a part of the history (replaying the edits then performs the behavior again).
   The mechanism can be used to implement programming by demonstration \cite{cypher-1993-pbd}
   (Subtext~8~\cite{edwards-2005-subtext}, Denicek \cite{petricek-2025-denicek}).
@@ -677,8 +677,8 @@ purpose to avoid name mix-ups.
 \section{Design Choices: Programming}
 \label{sec:prog}
 An essential characteristic of document-oriented programming systems is that they allow some
-kind of programming. However, our definition admits both end-user document systes with
-limited programming capabilitie and systems that can be fully reprogrammed from within themselves.
+kind of programming. However, our definition admits both end-user document systems with
+limited programming capabilities and systems that can be fully reprogrammed from within themselves.
 Systems also differ in their programming model, as well as where and how they store program code.
 
 \subsection{Programming Model}
@@ -784,7 +784,7 @@ refer to the design choice as \emph{Metaprogramming Capabilities}.
 
 \item \emph{Full Metaprogramming.} Only document-oriented programming systems where much of the
   system itself is implemented within itself can be modified from within code in the document.
-  (Ampleforth \cite{bracha-2022-ampleforth}, BootrstrapLab \cite{jakubovic-2022-bootstraplab},
+  (Ampleforth \cite{bracha-2022-ampleforth}, BootstrapLab \cite{jakubovic-2022-bootstraplab},
   Lopecode \cite{larkworthy-2025-lopecodetour}). The degree depends on what the minimal
   unmodifiable runtime of the system is.
 \end{itemize}
@@ -798,7 +798,7 @@ Everything else, including the document model based on cells and the editor is i
 
 \subsection{Code Representation}
 How is code represented in a document-oriented programming system and where can it be found?
-We consider these two aspects together as a signle design choice.
+We consider these two aspects together as a signal design choice.
 
 \begin{itemize}
 \item \emph{Naive Realism} vs. \emph{Hidden Representation.} In the naive realism model,
@@ -811,7 +811,7 @@ We consider these two aspects together as a signle design choice.
 \item \emph{Structured Representation} vs. \emph{Textual Representation.}
   Most document-oriented programming systems use a structured representation of a document,
   such as a tree (see \S\ref{sec:struct-shape}). In such systems, code can be represented as an
-  AST using the same structure and edited using a strucute editor (Boxer~\cite{disessa-1986-boxer},
+  AST using the same structure and edited using a structure editor (Boxer~\cite{disessa-1986-boxer},
   Subtext~\cite{edwards-2005-subtext}, Denicek~\cite{petricek-2025-denicek}, Hazel~\cite{omar-2021-livelits}).
   The alternative is to use a textual representation of code alongside with an (embedded)
   text editor (Jupyter~\cite{kluyver-2016-jupyter}, Potluck \cite{litt-2022-potluck},
@@ -840,7 +840,7 @@ what is considered a well-formed document structure.
 
 \item \emph{Implicit Structure.} Document systems that let users programmatically manipulate
   documents with more complex shapes may allow arbitrary modifications of the structure
-  (Webnicek~\cite{petricek-2025-denicek}, BootrstrapLab~\cite{jakubovic-2022-bootstraplab}).
+  (Webnicek~\cite{petricek-2025-denicek}, BootstrapLab~\cite{jakubovic-2022-bootstraplab}).
   Changing the structure in a way that is incompatible with other code in the document then
   results in a runtime error, reported when the other code is executed.
 
@@ -959,7 +959,7 @@ can, for example, display a document visually, but use a plain text editor.
 \item \emph{In-System Editor.} Systems that provide sufficient expressive power and rendering
   capabilities to fully control the display and handling of user events can, in principle,
   support any kind of editing interface, even if they typically use one of the above
-  design choices (Ampleforth \cite{bracha-2022-ampleforth}, BootrstrapLab \cite{jakubovic-2022-bootstraplab},
+  design choices (Ampleforth \cite{bracha-2022-ampleforth}, BootstrapLab \cite{jakubovic-2022-bootstraplab},
   Lopecode~\cite{larkworthy-2025-lopecodetour}).
 \end{itemize}
 
@@ -974,7 +974,7 @@ specifically on how the evaluation of code happens.
 \subsection{Evaluation Mode}
 \label{sec:eval-mode}
 
-The first choice is concerend with what triggers evaluation. The different choices have been
+The first choice is concerned with what triggers evaluation. The different choices have been
 discussed extensively in the context of live programming and our list below partly follows the
 established levels of liveness \cite{tanimoto-1990-viva,tanimoto-2013-live}. In technical
 dimensions \cite{jakubovic-2023-techdims}, the evaluation mode is determined by the structure
@@ -1018,10 +1018,10 @@ during (or at the end of) the evaluation.
   This could be the case in declarative systems too, although such systems typically use one
   of the subsequent two choices.
 
-\item \emph{Inernalized Execution.} A document-oriented programming system can choose to use no
+\item \emph{Internalized Execution.} A document-oriented programming system can choose to use no
   other memory or information storage aside from the document that it is working with. In this case,
   the individual steps of the execution repeatedly modify the state of the document until the
-  computation terminates (BootrstrapLab \cite{jakubovic-2022-bootstraplab}, Boxer~\cite{disessa-1986-boxer},
+  computation terminates (BootstrapLab \cite{jakubovic-2022-bootstraplab}, Boxer~\cite{disessa-1986-boxer},
   see the example below).
 
 \item \emph{Materialized Execution.} Finally, a system can record every single step of the execution
@@ -1030,7 +1030,7 @@ during (or at the end of) the evaluation.
   analyse provenance or execution of tests. The approach has only been implemented experimentally
   and would require optimization to work well in practice
   (Denicek \cite{petricek-2025-denicek}, Subtext~7~\cite{edwards-2017-reifying},
-  BootrstrapLab/MASP \cite{jakubovic-2022-bootstraplab}).
+  BootstrapLab/MASP \cite{jakubovic-2022-bootstraplab}).
 \end{itemize}
 
 \begin{figure}[t]
@@ -1040,7 +1040,7 @@ during (or at the end of) the evaluation.
 \vspace{-0.5em}
 \caption{First six step of the execution of \texttt{foo 10 20} in the Boxer movie stepper.
   The box above shows the original source code. The box below shows the successive steps.
-  (1) The evaluation starts, (2) function definition repalces the
+  (1) The evaluation starts, (2) function definition replaces the
   reference, (3, 4) arguments are wrapped in data boxes, (5) \texttt{input} is replaced with
   boxes passed as arguments and (6) \texttt{x} is replaced with the variable value.
   (Image source~\cite{klotz-1989-boxer})}
@@ -1052,7 +1052,7 @@ during (or at the end of) the evaluation.
 The evaluation model of Boxer~\cite{disessa-1986-boxer} is based on the idea of \emph{copying
 semantics}. In this model, the evaluation of a reference to another box proceeds by replacing
 the reference with the box itself. The user does not see this during normal use of the system, but
-the Boxer movie stepper \cite{klotz-1989-boxer} makes it possible to see how the exeuction
+the Boxer movie stepper \cite{klotz-1989-boxer} makes it possible to see how the execution
 proceeds step-by-step. As illustrated in Figure~\ref{fig:stepper}, the execution can be seen as
 a sequence of (mutable) transformations of the document.
 
@@ -1103,7 +1103,7 @@ and a programming system may support a combination of these.
 \paragraph{Example: Denicek and Subtext.}
 Identification of nodes poses an interesting problem in systems where document nodes can be
 moved and renamed, or in systems based on edit histories (see \S\ref{sec:struct-repr})
-where edits need to be merged or reconcilled. Two systems that tackle this problem are
+where edits need to be merged or reconciled. Two systems that tackle this problem are
 Baseline~\cite{edwards-2025-baseline} and Denicek \cite{petricek-2025-denicek}.
 
 Consider a document with a root node \texttt{pioneers} containing two
@@ -1219,7 +1219,7 @@ if they can be used for editing programs with projection widgets akin to
 livelits~\cite{mcnutt-2023-projectional}.
 
 There are also multiple programming systems that have some of the characteristics of
-document-oriented programming systems, but not all. RekonPad~\cite{ohshima-2025-renkonpad}
+document-oriented programming systems, but not all. RenkonPad~\cite{ohshima-2025-renkonpad}
 is based on the DOM programming model, but uses it to build a window-based interface.
 Systems built on top of Webstrates~\cite{radle-2017-codestrates,klokmose-2019-video} are
 also relevant, but do not fundamentally change the underlying model.
